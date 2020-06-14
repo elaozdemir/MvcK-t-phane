@@ -1,0 +1,30 @@
+﻿@using MvcKütüphane.Models.Entity;
+@model List<TBLILETISIM>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Gelen Mesajlar</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ad  Soyad</th>
+        <th>Mail</th>
+        <th>Konu</th>
+        <th>Tarih</th>
+        <th>Mesaj</th>
+    </tr>
+    @foreach (var prs in Model)
+    {
+        <tr>
+            <td>@prs.AD</td>
+            <td>@prs.MAİL</td>
+            <td>@prs.KONU</td>
+            <td>@Convert.ToDateTime(prs.TARIH).ToString("dd/MM/yyyy")</td>
+            <td>@prs.MESAJ</td>
+        </tr>
+    }
+</table>
+

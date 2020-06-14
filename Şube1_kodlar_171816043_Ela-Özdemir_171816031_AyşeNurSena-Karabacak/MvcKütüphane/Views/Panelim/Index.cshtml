@@ -1,0 +1,73 @@
+﻿@model MvcKütüphane.Models.Entity.TBLUYELER
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPanelim.cshtml";
+}
+
+
+    <br />
+    <h2>Üye Profil Bilgileri</h2>
+    
+
+
+
+@using (Html.BeginForm("Index2", "Panelim", FormMethod.Post))
+{
+<table class="table table-hover" style="margin-top:30px">
+    <tr>
+        <td>
+            <label >Mail Adresi:</label>
+            @HttpContext.Current.User.Identity.Name
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            
+            Ad:
+            @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Soyad:
+            @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Kullanıcı Adı:
+            @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Şifre:
+            @Html.TextBoxFor(x => x.SIFRE, new { @class = "form-control" })
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Telefon Numarası:
+            @Html.TextBoxFor(x => x.TELEFON, new { @class = "form-control" })
+        </td>
+    </tr>
+    
+    <tr>
+        <td>
+            Okul:
+            @Html.TextBoxFor(x => x.OKUL, new { @class = "form-control" })
+        </td>
+    </tr>
+
+
+
+
+
+
+</table>
+    <button class=" btn btn-warning">Değişiklikleri Kaydet</button>
+    <br />
+    <br />
+}
+
